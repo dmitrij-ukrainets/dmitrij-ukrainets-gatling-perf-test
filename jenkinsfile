@@ -7,7 +7,6 @@ pipeline {
     stage ("Set M2 variable"){
     steps {bat 'set M2 = c:\\my_utils\\apache-maven-3.8.4\\bin'}
     }
-        }
         stage("Build Maven") {
             steps {
                 bat 'mvn -B clean package'
