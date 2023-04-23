@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+    stage ("Set M2_HOME variable"){
+        bat 'set M2_HOME = c:\\my_utils\\apache-maven-3.8.4\\'
+        }
+    stage ("Set M2 variable"){
+    bat 'set M2 = c:\\my_utils\\apache-maven-3.8.4\\bin'
+    }
         stage("Build Maven") {
             steps {
                 bat 'mvn -B clean package'
