@@ -12,14 +12,9 @@ pipeline {
                 bat 'mvn -B clean package'
             }
         }
-        stage("Users to int"){
-        steps{script{int users = params.users}}
-        }
-        stage("ramp to int"){
-        steps{script{int ramp = params.ramp}}
-        }
         stage("Run Gatling") {
-
+        steps{script{int users = params.users}}
+        steps{script{int ramp = params.ramp}}
             steps {
                 bat 'mvn clean gatling:test -Dusers=${users} -Dramp=${ramp}'
             }
