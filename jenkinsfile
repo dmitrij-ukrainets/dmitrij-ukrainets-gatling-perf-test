@@ -1,8 +1,8 @@
 pipeline {
     agent any
     parameters{
-    string(name: "users", defaultValue: "1")
-    string(name: "ramp", defaultValue: "1")
+    string(name: "users", defaultValue: 1)
+    string(name: "ramp", defaultValue: 1)
     }
     stages {
     stage ("Set M2_HOME variable"){
@@ -18,8 +18,8 @@ pipeline {
         }
         stage("Run Gatling") {
         steps{
-            script{int users = params.users as Integer}
-            script{int ramp = params.ramp as Integer}
+            //script{int users = params.users as Integer}
+            //script{int ramp = params.ramp as Integer}
                 bat 'mvn clean gatling:test -Dusers=${users} -Dramp=${ramp}'
             }
             post {
