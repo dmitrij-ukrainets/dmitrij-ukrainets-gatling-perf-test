@@ -18,7 +18,8 @@ pipeline {
         }
         stage("Run Gatling") {
         steps{
-            script{integer users = params.int('users')}
+            script{def users = params.users
+            int usersint = users as Integer}
             script{int rampint = params.ramp.toInteger()}
                 bat 'mvn clean gatling:test -Dusers=${usersint} -Dramp=${rampint}'
             }
