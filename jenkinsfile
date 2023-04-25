@@ -13,10 +13,10 @@ pipeline {
             }
         }
         stage("Users to int"){
-        script{steps{int users = params.users}}
+        steps{script{int users = params.users}}
         }
         stage("ramp to int"){
-        script{steps{int ramp = params.ramp}}
+        steps{script{int ramp = params.ramp}}
         }
         stage("Run Gatling") {
 
