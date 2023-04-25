@@ -20,7 +20,7 @@ pipeline {
         steps{
             script{
             def usersint = "${params.users}"
-            usersint.toInteger()}{println it}
+            usersint.toInteger()}{print (usersint)}
             script{int rampint = params.ramp.toInteger()}
                 bat 'mvn clean gatling:test -Dusers=${usersint} -Dramp=${rampint}'
             }
