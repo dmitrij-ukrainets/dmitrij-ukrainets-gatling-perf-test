@@ -4,7 +4,7 @@ import io.gatling.core.Predef._
 import io.gatling.core.structure._
 import io.gatling.http.Predef._
 import io.gatling.http.protocol._
-import net.sf.saxon.om.SequenceIterator.Property
+import net.sf.saxon.om.SequenceIterator._
 
 import java.lang
 import scala.util.Properties
@@ -22,7 +22,7 @@ object BaseHelpers {
   val httpProtocol: HttpProtocolBuilder = http
     .header(name = "Referer", value = shopizer)
     .acceptLanguageHeader("en-US,en;q=0.5")
-    .originHeader(shopizer)
+    .header(name = "Origin", value = shopizer)
     .header(name = "Access-Control-Request-Headers", value = "authorization")
     .header(name = "Access-Control-Request-Method", value = "GET")
     .acceptEncodingHeader("gzip, deflate")
