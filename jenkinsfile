@@ -20,7 +20,7 @@ pipeline {
         steps{
             script{int users = params.users}
             script{int ramp = params.ramp}
-                bat 'mvn clean gatling:test -Dusers=$users -Dramp=$ramp'
+                bat 'mvn clean gatling:test -Dusers=${users} -Dramp=${ramp}'
             }
             post {
                 always {
