@@ -14,7 +14,7 @@ pipeline {
         }
         stage("Run Gatling") {
         steps{int users = params.users}
-        steps{int ramp = params.ramp;}
+        steps{int ramp = params.ramp}
             steps {
                 bat 'mvn clean gatling:test -Dusers=${users} -Dramp=${ramp}'
             }
