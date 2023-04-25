@@ -12,10 +12,10 @@ pipeline {
                 bat 'mvn -B clean package'
             }
         }
-        stage{
+        stage("Users to int"){
         steps{int users = params.users}
         }
-        stage{
+        stage("ramp to int"){
         steps{int ramp = params.ramp}
         }
         stage("Run Gatling") {
