@@ -2,7 +2,8 @@ pipeline {
     agent any
     parameters{
     int(name: "users", defaultValue: 1)
-    int(name: "ramp", defaultValue: 1)}
+    int(name: "ramp", defaultValue: 1)
+    }
     stages {
     stage ("Set M2_HOME variable"){
     steps {bat 'set M2_HOME = c:\\my_utils\\apache-maven-3.8.4\\'}
