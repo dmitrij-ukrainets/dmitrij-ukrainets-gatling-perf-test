@@ -11,8 +11,8 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <encoding>UTF-8</encoding>
 
-    <gatling.version>3.6.1</gatling.version>
-    <gatling-maven-plugin.version>3.1.2</gatling-maven-plugin.version>
+    <gatling.version>3.3.1</gatling.version>
+    <gatling-maven-plugin.version>3.0.5</gatling-maven-plugin.version>
     <default.sumulation.class>simulation.ShopizerPerfTest</default.sumulation.class>
   </properties>
 
@@ -35,7 +35,7 @@
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
-      <version>2.13.6</version>
+      <version>2.13.10</version>
     </dependency>
   </dependencies>
 
