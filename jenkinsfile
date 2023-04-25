@@ -12,9 +12,14 @@ pipeline {
                 bat 'mvn -B clean package'
             }
         }
-        stage("Run Gatling") {
+        stage{
         steps{int users = params.users}
+        }
+        stage{
         steps{int ramp = params.ramp}
+        }
+        stage("Run Gatling") {
+
             steps {
                 bat 'mvn clean gatling:test -Dusers=${users} -Dramp=${ramp}'
             }
