@@ -1,8 +1,8 @@
 pipeline {
     agent any
     parameters{
-    string(name: "users", defaultValue: 1)
-    string(name: "ramp", defaultValue: 1)
+    integer(name: "users", defaultValue: 1)
+    integer(name: "ramp", defaultValue: 1)
     }
     stages {
     stage ("Set M2_HOME variable"){
