@@ -16,7 +16,7 @@ class ShopizerPerfTest extends Simulation {
 
   //to start simulation and clear previous results and pass both parameters: mvn clean gatling:test -Dusers=100 -Dramp=60
     setUp(
-  scnShopizerPerfTest.inject(rampUsers(System.getProperty("users","1").toInt).during(System.getProperty("ramp","1").toInt))
+  scnShopizerPerfTest.inject(rampUsers(System.getProperty("users","5").toInt).during(System.getProperty("ramp","600").toInt))
   ).protocols(httpProtocol)
 
   //to start simulation and clear previous results and use both parameters from BaseHelper: mvn clean gatling:test
