@@ -18,9 +18,9 @@ pipeline {
         }
         stage("Run Gatling") {
         steps{
-            script{int users = params.users}
-            script{int ramp = params.ramp}
-                bat 'mvn clean gatling:test -Dusers=users -Dramp=ramp'
+            script{int usersint = params.users}
+            script{int rampint = params.ramp}
+                bat 'mvn clean gatling:test -Dusers=${usersint} -Dramp=${rampint}'
             }
             post {
                 always {
