@@ -30,13 +30,11 @@ object ShopizerPerfTest {
               .exec(thinkTimer())
           }
           .group("S01_Add_Chair_or_Proceed_to_Checkout_with_Table") {
-            randomSwitchOrElse(
+            randomSwitch(
               usersToAddChair -> exec(scenarios.AddChair.scnAddChair),
               usersWithTableToCart -> doIfEquals("${tableAdded}", "1") {
                 exec(scenarios.OpenCartAndCheckout.scnOpenCartAndCheckout)
               }
-            )(
-              exitHere
             )
           }
           .group("S01_OpenCart_And_Checkout_With_Chair") {
