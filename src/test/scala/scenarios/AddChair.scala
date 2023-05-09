@@ -13,19 +13,14 @@ object AddChair {
           exec(api.S01_ST05_GoToChairs.GoToChairs())
             .exec(thinkTimer())
         }
-      )
-      .exitBlockOnFail(
-        group("S01_ST06_OpenChair") {
-          exec(api.S01_ST06_OpenChair.OpenChair())
-            .exec(thinkTimer())
-        }
-      )
-      .exitBlockOnFail(
-        group("S01_ST07_AddChair") {
-          exec(api.S01_ST07_AddChair.AddChair())
-            .exec(thinkTimer())
-        }
+          .group("S01_ST06_OpenChair") {
+            exec(api.S01_ST06_OpenChair.OpenChair())
+              .exec(thinkTimer())
+          }
+          .group("S01_ST07_AddChair") {
+            exec(api.S01_ST07_AddChair.AddChair())
+              .exec(thinkTimer())
+          }
       )
   }
-
 }

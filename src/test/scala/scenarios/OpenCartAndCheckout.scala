@@ -8,18 +8,15 @@ object OpenCartAndCheckout {
 
   def scnOpenCartAndCheckout: ScenarioBuilder = {
     scenario("Open Cart And Checkout")
-        .exitBlockOnFail(
+      .exitBlockOnFail(
         group("S01_OpenCart") {
           exec(api.S01_OpenCart.OpenCart())
             .exec(thinkTimer())
         }
-      )
-      .exitBlockOnFail(
-        group("S01_ProceedToCheckout"){
-          exec(api.S01_ProceedToCheckout.ProceedToCheckout())
-            .exec(thinkTimer())
-        }
+          .group("S01_ProceedToCheckout") {
+            exec(api.S01_ProceedToCheckout.ProceedToCheckout())
+              .exec(thinkTimer())
+          }
       )
   }
-
 }
