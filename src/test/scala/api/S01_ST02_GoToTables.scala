@@ -27,7 +27,7 @@ object S01_ST02_GoToTables {
       .exec(api.S01_GetShopDefaults.GetShopDefaults())
       .exec(api.S01_GetCategories.GetCategories())
       .exec(api.S01_GetContentPages.GetContentPages())
-      .exec(api.S01_OptionsProduct1Price.OptionseProduct1Price())
+      .exec(api.S01_ST01_OptionseProductPrice.OptionseProductPrice(optionsproduct = "1", optionsRequestNumber = "01"))
       .exec(
         http("S01_ST02_OptionsCategory50Store")
           .options(apiShopizer + "category/50?store=DEFAULT&lang=en")
@@ -38,7 +38,7 @@ object S01_ST02_GoToTables {
           .queryParam("store", "DEFAULT")
           .queryParam("lang", "en")
       )
-      .exec(api.S01_PostProduct1Price.PostProduct1Price())
+      .exec(api.S01_ST01_PostProductPrice.PostProductPrice(postproduct = "1", postRequestNumber = "01"))
       .exec(
         http("S01_ST02_Options50Manufacturers")
           .options(apiShopizer + "category/50/manufacturers/?store=DEFAULT&lang=en")
