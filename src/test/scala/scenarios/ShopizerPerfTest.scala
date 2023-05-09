@@ -31,8 +31,8 @@ object ShopizerPerfTest {
           }
           .group("S01_Add_Chair_or_Proceed_to_Checkout_with_Table") {
             randomSwitchOrElse(
-              50.0 -> exec(scenarios.AddChair.scnAddChair),
-              15.0 -> doIfEquals("${tableAdded}", "1") {
+              usersToAddChair -> exec(scenarios.AddChair.scnAddChair),
+              usersWithTableToCart -> doIfEquals("${tableAdded}", "1") {
                 exec(scenarios.OpenCartAndCheckout.scnOpenCartAndCheckout)
               }
             )(
@@ -41,7 +41,7 @@ object ShopizerPerfTest {
           }
           .group("S01_OpenCart_And_Checkout_With_Chair") {
             randomSwitchOrElse(
-              45.0 -> doIfEquals("${chairAdded}", "2") {
+              usersWithChairToCart -> doIfEquals("${chairAdded}", "2") {
                 exec(scenarios.OpenCartAndCheckout.scnOpenCartAndCheckout)
               }
             )(

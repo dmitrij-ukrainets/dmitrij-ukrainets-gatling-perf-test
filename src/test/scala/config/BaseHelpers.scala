@@ -34,4 +34,9 @@ object BaseHelpers {
   //val users: Integer = Integer.getInteger("rampUsers", 100)
   //val ramp: lang.Long = java.lang.Long.getLong("during", 60)
 
+  val usersToAddChair: Double = 50.0
+  val usersWithTableToCart: Double = 15.0
+  val usersWithChairToCart: Double = 45.0
+
+
 }
