@@ -15,9 +15,17 @@ class ShopizerPerfTest extends Simulation {
   //).protocols(httpProtocol)
 
   //to start simulation and clear previous results and pass both parameters: mvn clean gatling:test -Dusers=100 -Dramp=60
-    setUp(
-  scnShopizerPerfTest.inject(rampUsers(System.getProperty("users","1500").toInt).during(System.getProperty("ramp","300").toInt))
-  ).protocols(httpProtocol)
+    //setUp(
+  //scnShopizerPerfTest.inject(rampUsers(System.getProperty("users","1500").toInt).during(System.getProperty("ramp","300").toInt))
+  //).protocols(httpProtocol)
+
+  setUp(
+    scnShopizerPerfTest.inject(
+      nothingFor(0),
+      atOnceUsers(10),
+      rampUsers(244) during 30
+    ).protocols(httpProtocol)
+  ).maxDuration(1800)
 
   //to start simulation and clear previous results and use both parameters from BaseHelper: mvn clean gatling:test
   //setUp(
