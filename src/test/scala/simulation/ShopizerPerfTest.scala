@@ -29,7 +29,7 @@ class ShopizerPerfTest extends Simulation {
 
   setUp(
     scnShopizerPerfTest.inject(
-      constantConcurrentUsers(180).during(180))
+      constantConcurrentUsers(180).during(1800))
   ).protocols(httpProtocol)
 
   //to start simulation and clear previous results and use both parameters from BaseHelper: mvn clean gatling:test
