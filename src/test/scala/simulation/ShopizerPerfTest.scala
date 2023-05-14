@@ -31,7 +31,7 @@ class ShopizerPerfTest extends Simulation {
     scnShopizerPerfTest.inject(
       constantUsersPerSec(180) during(60))).throttle(
     reachRps(180) in(60),
-    holdFor(1740)
+    holdFor(120)
   )
 
   //to start simulation and clear previous results and use both parameters from BaseHelper: mvn clean gatling:test
