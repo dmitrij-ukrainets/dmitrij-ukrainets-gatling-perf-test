@@ -9,8 +9,7 @@ object ShopizerPerfTest {
 
   def scnShopizerPerfTest: ScenarioBuilder = {
     scenario("Shopizer Performance Test")
-      .forever() {
-        exec(flushHttpCache)
+       .exec(flushHttpCache)
           .exec(flushSessionCookies)
           .exec(flushCookieJar)
           .exitBlockOnFail(
@@ -48,6 +47,5 @@ object ShopizerPerfTest {
                 )
               }
           )
-      }
   }
 }
