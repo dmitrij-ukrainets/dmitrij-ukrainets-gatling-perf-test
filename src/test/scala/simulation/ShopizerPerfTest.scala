@@ -23,7 +23,7 @@ class ShopizerPerfTest extends Simulation {
     scnShopizerPerfTest.inject(
       nothingFor(0),
       atOnceUsers(10),
-      rampUsers(244) during 30
+      rampUsers(244) during (30)
     ).protocols(httpProtocol)
   ).maxDuration(1800)
 
