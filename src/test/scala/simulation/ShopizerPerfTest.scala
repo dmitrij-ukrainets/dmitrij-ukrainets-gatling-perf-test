@@ -21,11 +21,11 @@ class ShopizerPerfTest extends Simulation {
 
   setUp(
     scnShopizerPerfTest.inject(
-      nothingFor(0),
+      nothingFor(5),
       atOnceUsers(10),
-      rampUsers(244) during (30)
+      rampUsers(300) during (60)
     ).protocols(httpProtocol)
-  ).maxDuration(1800)
+  ).maxDuration(120)
 
   //to start simulation and clear previous results and use both parameters from BaseHelper: mvn clean gatling:test
   //setUp(
